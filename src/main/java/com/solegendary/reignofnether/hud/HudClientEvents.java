@@ -575,8 +575,8 @@ public class HudClientEvents {
                         case ORE -> actionButton.iconResource = new ResourceLocation(ReignOfNether.MOD_ID, "textures/icons/items/pickaxe.png");
                     }
                     actionButton.tooltipLines = List.of(
-                            FormattedCharSequence.forward("Gather Resources (" + UnitClientEvents.getSelectedUnitResourceTarget() + ")", Style.EMPTY),
-                            FormattedCharSequence.forward("Click to change target resource", Style.EMPTY));
+                            FormattedCharSequence.forward(Component.translatable("hud.hudclientevents.gather_resouces").getString() + " (" + UnitClientEvents.getSelectedUnitResourceTarget() + ")", Style.EMPTY),
+                            FormattedCharSequence.forward(Component.translatable("hud.hudclientevents.gather_resouces_description").getString(), Style.EMPTY));
                 }
                 actionButton.render(evt.getPoseStack(), blitX, blitY, mouseX, mouseY);
                 renderedButtons.add(actionButton);
