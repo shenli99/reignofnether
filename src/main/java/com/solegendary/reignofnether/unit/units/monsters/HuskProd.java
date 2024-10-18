@@ -11,6 +11,7 @@ import com.solegendary.reignofnether.research.ResearchClient;
 import com.solegendary.reignofnether.research.researchItems.ResearchHusks;
 import com.solegendary.reignofnether.resources.ResourceCost;
 import com.solegendary.reignofnether.resources.ResourceCosts;
+import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
@@ -56,11 +57,11 @@ public class HuskProd extends ProductionItem {
                 ResourceCosts.getFormattedCost(cost),
                 ResourceCosts.getFormattedPopAndTime(cost),
                 FormattedCharSequence.forward("", Style.EMPTY),
-                FormattedCharSequence.forward("A hardy variant of the zombie with tougher skin.", Style.EMPTY),
+                FormattedCharSequence.forward(Component.translatable("unit.monsters.huskprod.description1").getString(), Style.EMPTY),
                 FormattedCharSequence.forward("", Style.EMPTY),
-                FormattedCharSequence.forward("Husks DO NOT burn under sunlight.", Style.EMPTY),
+                FormattedCharSequence.forward(Component.translatable("unit.monsters.huskprod.description2").getString(), Style.EMPTY),
                 FormattedCharSequence.forward("", Style.EMPTY),
-                FormattedCharSequence.forward("Requires an upgrade at the Laboratory.", Style.EMPTY)
+                FormattedCharSequence.forward(Component.translatable("unit.monsters.huskprod.description3").getString(), Style.EMPTY)
             )
         );
     }

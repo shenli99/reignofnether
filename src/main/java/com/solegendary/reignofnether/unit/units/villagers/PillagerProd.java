@@ -11,6 +11,7 @@ import com.solegendary.reignofnether.research.ResearchClient;
 import com.solegendary.reignofnether.research.researchItems.ResearchVindicatorAxes;
 import com.solegendary.reignofnether.resources.ResourceCost;
 import com.solegendary.reignofnether.resources.ResourceCosts;
+import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
@@ -47,11 +48,11 @@ public class PillagerProd extends ProductionItem {
             ResourceCosts.getFormattedCost(cost),
             ResourceCosts.getFormattedPopAndTime(cost),
             FormattedCharSequence.forward("", Style.EMPTY),
-            FormattedCharSequence.forward("A villager armed with a crossbow for ranged combat.", Style.EMPTY)
+            FormattedCharSequence.forward(Component.translatable("unit.villagers.pillagerprod.description1").getString(), Style.EMPTY)
         ));
         if (ResearchClient.hasResearch(ResearchVindicatorAxes.itemName)) {
             tooltipLines.add(FormattedCharSequence.forward("", Style.EMPTY));
-            tooltipLines.add(FormattedCharSequence.forward("Upgraded with multishot crossbows that fire triple arrows", Style.EMPTY.withBold(true)));
+            tooltipLines.add(FormattedCharSequence.forward(Component.translatable("unit.villagers.pillagerprod.description2").getString(), Style.EMPTY.withBold(true)));
         }
 
         return new Button(

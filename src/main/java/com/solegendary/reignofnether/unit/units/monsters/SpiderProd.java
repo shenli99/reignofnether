@@ -13,6 +13,7 @@ import com.solegendary.reignofnether.research.researchItems.ResearchPoisonSpider
 import com.solegendary.reignofnether.research.researchItems.ResearchStrays;
 import com.solegendary.reignofnether.resources.ResourceCost;
 import com.solegendary.reignofnether.resources.ResourceCosts;
+import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
@@ -76,10 +77,10 @@ public class SpiderProd extends ProductionItem {
                 ResourceCosts.getFormattedCost(cost),
                 ResourceCosts.getFormattedPopAndTime(cost),
                 FormattedCharSequence.forward("", Style.EMPTY),
-                FormattedCharSequence.forward("A giant spider that is nimble but frail.", Style.EMPTY),
-                FormattedCharSequence.forward("Can be upgraded to allow skeletons to ride them.", Style.EMPTY),
+                FormattedCharSequence.forward(Component.translatable("unit.monsters.spiderprod.description1").getString(), Style.EMPTY),
+                FormattedCharSequence.forward(Component.translatable("unit.monsters.spiderprod.description2").getString(), Style.EMPTY),
                 FormattedCharSequence.forward("", Style.EMPTY),
-                FormattedCharSequence.forward("Spiders move much more slowly under sunlight.", Style.EMPTY)
+                FormattedCharSequence.forward(Component.translatable("unit.monsters.spiderprod.description2").getString(), Style.EMPTY)
             )
         );
     }

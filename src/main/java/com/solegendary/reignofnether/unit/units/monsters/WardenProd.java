@@ -9,6 +9,7 @@ import com.solegendary.reignofnether.keybinds.Keybinding;
 import com.solegendary.reignofnether.registrars.EntityRegistrar;
 import com.solegendary.reignofnether.resources.ResourceCost;
 import com.solegendary.reignofnether.resources.ResourceCosts;
+import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
@@ -55,7 +56,7 @@ public class WardenProd extends ProductionItem {
                         ResourceCosts.getFormattedCost(cost),
                         ResourceCosts.getFormattedPopAndTime(cost),
                         FormattedCharSequence.forward("", Style.EMPTY),
-                        FormattedCharSequence.forward("A powerful but blind monster that can fire sonic booms.", Style.EMPTY)
+                        FormattedCharSequence.forward(Component.translatable("unit.monsters.wardenprod.description").getString(), Style.EMPTY)
                 )
         );
     }

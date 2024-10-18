@@ -11,6 +11,7 @@ import com.solegendary.reignofnether.research.ResearchClient;
 import com.solegendary.reignofnether.research.researchItems.ResearchDrowned;
 import com.solegendary.reignofnether.resources.ResourceCost;
 import com.solegendary.reignofnether.resources.ResourceCosts;
+import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
@@ -56,12 +57,12 @@ public class DrownedProd extends ProductionItem {
                 ResourceCosts.getFormattedCost(cost),
                 ResourceCosts.getFormattedPopAndTime(cost),
                 FormattedCharSequence.forward("", Style.EMPTY),
-                FormattedCharSequence.forward("An infectious variant of the zombie which zombifies", Style.EMPTY),
-                FormattedCharSequence.forward("villagers and piglins after killing them.", Style.EMPTY),
+                FormattedCharSequence.forward(Component.translatable("unit.monsters.drowned.description1").getString(), Style.EMPTY),
+                FormattedCharSequence.forward(Component.translatable("unit.monsters.drowned.description2").getString(), Style.EMPTY),
                 FormattedCharSequence.forward("", Style.EMPTY),
-                FormattedCharSequence.forward("Drowned will burn under sunlight.", Style.EMPTY),
+                FormattedCharSequence.forward(Component.translatable("unit.monsters.drowned.description3").getString(), Style.EMPTY),
                 FormattedCharSequence.forward("", Style.EMPTY),
-                FormattedCharSequence.forward("Requires an upgrade at the Laboratory.", Style.EMPTY)
+                FormattedCharSequence.forward(Component.translatable("unit.monsters.drowned.description4").getString(), Style.EMPTY)
             )
         );
     }

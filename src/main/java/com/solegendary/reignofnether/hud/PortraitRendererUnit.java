@@ -131,6 +131,8 @@ public class PortraitRendererUnit<T extends LivingEntity, M extends EntityModel<
     // Must be called from DrawScreenEvent
     public RectZone render(PoseStack poseStack, String name, int x, int y, LivingEntity entity) {
 
+        name = Component.translatable(name + ":)").getString();
+
         Relationship rs = UnitClientEvents.getPlayerToEntityRelationship(entity);
 
         int bgCol = 0x0;
@@ -164,7 +166,7 @@ public class PortraitRendererUnit<T extends LivingEntity, M extends EntityModel<
 
         if (itemStack.getItem() instanceof BannerItem) {
             entity.setItemSlot(EquipmentSlot.HEAD, itemStack);
-            name += " Captain";
+            name += Component.translatable("hud.portraitrendereruint.captain").getString();
         }
         if (entity.getPassengers().size() == 1) {
             String pName = getSimpleEntityName(entity.getPassengers().get(0)).replace("_"," ");

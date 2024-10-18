@@ -15,6 +15,7 @@ import com.solegendary.reignofnether.unit.interfaces.WorkerUnit;
 import com.solegendary.reignofnether.util.MiscUtil;
 import com.solegendary.reignofnether.util.MyMath;
 import net.minecraft.core.BlockPos;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.level.Level;
@@ -153,7 +154,7 @@ public class UnitActionItem {
                         goal.setMoveTarget(preselectedBlockPos);
                         if (Unit.atMaxResources((Unit) workerUnit)) {
                             if (level.isClientSide())
-                                HudClientEvents.showTemporaryMessage("Worker inventory full, dropping off first...");
+                                HudClientEvents.showTemporaryMessage(Component.translatable("unit.unitactionitem.inventory_full").getString());
                             goal.saveAndReturnResources();
                         }
                     } else if (buildingAtPos instanceof Portal portal &&
@@ -223,7 +224,7 @@ public class UnitActionItem {
                                 goal.setTargetFarm(building);
                                 if (Unit.atMaxResources((Unit) workerUnit)) {
                                     if (level.isClientSide())
-                                        HudClientEvents.showTemporaryMessage("Worker inventory full, dropping off first...");
+                                        HudClientEvents.showTemporaryMessage(Component.translatable("unit.unitactionitem.inventory_full").getString());
                                     goal.saveAndReturnResources();
                                 }
                             }
