@@ -24,7 +24,7 @@ import static com.solegendary.reignofnether.building.BuildingUtils.getAbsoluteBl
 
 public class TownCentre extends ProductionBuilding {
 
-    public final static String buildingName = Component.translatable("building.buildings.villagers.town_centre").getString();
+    public final static String buildingName = "Town Centre";
     public final static String structureName = "town_centre";
     public final static ResourceCost cost = ResourceCosts.TOWN_CENTRE;
 
