@@ -6,6 +6,8 @@
     "hud.hudclientevents.workers_food": "务农工人数",
     "hud.hudclientevents.workers_wood": "伐木工人数",
     "hud.hudclientevents.workers_ore": "挖矿工人数",
+    "hud.hudclientevents.gather_resouces": "收集资源",
+    "hud.hudclientevents.gather_resouces_description": "点击改变目标资源",
     "item.reignofnether.zombie_unit_spawn_egg": "生成僵尸单位",
     "item.reignofnether.husk_unit_spawn_egg": "生成尸壳单位",
     "item.reignofnether.drowned_unit_spawn_egg": "生成溺尸单位",

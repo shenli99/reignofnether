@@ -172,15 +172,15 @@ public class PlayerServerEvents {
         }
         if (!TutorialServerEvents.isEnabled()) {
             if (!isRTSPlayer(serverPlayer.getId())) {
-                serverPlayer.sendSystemMessage(Component.literal("Welcome to Reign of Nether").withStyle(Style.EMPTY.withBold(true)));
-                serverPlayer.sendSystemMessage(Component.literal("Press F12 to toggle RTS camera and join the game"));
-                serverPlayer.sendSystemMessage(Component.literal("Use '/rts-help' to see the list of all commands"));
+                serverPlayer.sendSystemMessage(Component.literal(Component.translatable("player.playerclientevents.welcome").getString()).withStyle(Style.EMPTY.withBold(true)));
+                serverPlayer.sendSystemMessage(Component.literal(Component.translatable("player.playerclientevents.tip1").getString()));
+                serverPlayer.sendSystemMessage(Component.literal(Component.translatable("player.playerclientevents.tip2").getString()));
             } else {
-                serverPlayer.sendSystemMessage(Component.literal("Welcome back to Reign of Nether").withStyle(Style.EMPTY.withBold(true)));
+                serverPlayer.sendSystemMessage(Component.literal(Component.translatable("player.playerclientevents.welcome_back").getString()).withStyle(Style.EMPTY.withBold(true)));
             }
             if (serverPlayer.hasPermissions(4)) {
                 serverPlayer.sendSystemMessage(Component.literal(""));
-                serverPlayer.sendSystemMessage(Component.literal("As a server op you may use:"));
+                serverPlayer.sendSystemMessage(Component.literal(Component.translatable("player.playerclientevents.permissions").getString()));
                 serverPlayer.sendSystemMessage(Component.literal("/rts-fog enable | disable"));
                 serverPlayer.sendSystemMessage(Component.literal("/rts-reset"));
                 serverPlayer.sendSystemMessage(Component.literal(""));
@@ -210,13 +210,13 @@ public class PlayerServerEvents {
                 return;
             if (isRTSPlayer(serverPlayer.getId())) {
                 serverPlayer.sendSystemMessage(Component.literal(""));
-                serverPlayer.sendSystemMessage(Component.literal("You already started your RTS match!"));
+                serverPlayer.sendSystemMessage(Component.literal(Component.translatable("player.playerclientevents.matched").getString()));
                 serverPlayer.sendSystemMessage(Component.literal(""));
                 return;
             }
             if (serverPlayer.getLevel().getWorldBorder().getDistanceToBorder(pos.x, pos.z) < 1) {
                 serverPlayer.sendSystemMessage(Component.literal(""));
-                serverPlayer.sendSystemMessage(Component.literal("Cannot start outside map border"));
+                serverPlayer.sendSystemMessage(Component.literal(Component.translatable("player.playerclientevents.outside").getString()));
                 serverPlayer.sendSystemMessage(Component.literal(""));
                 return;
             }
@@ -250,8 +250,8 @@ public class PlayerServerEvents {
 
             if (!TutorialServerEvents.isEnabled()) {
                 serverPlayer.sendSystemMessage(Component.literal(""));
-                sendMessageToAllPlayers(playerName + " has started their game!", true);
-                sendMessageToAllPlayers("There are now " + rtsPlayers.size() + " total RTS player(s)");
+                sendMessageToAllPlayers(playerName + Component.translatable("player.playerclientevents.player_out1").getString(), true);
+                sendMessageToAllPlayers(String.format(Component.translatable("player.playerclientevents.player_count").getString(), rtsPlayers.size()));
             }
             PlayerClientboundPacket.syncRtsGameTime(rtsGameTicks);
             saveRTSPlayers();
@@ -291,8 +291,8 @@ public class PlayerServerEvents {
             ResourcesServerEvents.resetResources(bot.name);
 
             if (!TutorialServerEvents.isEnabled()) {
-                sendMessageToAllPlayers(bot.name + " (bot) has been added to the game!", true);
-                sendMessageToAllPlayers("There are now " + rtsPlayers.size() + " total RTS player(s)");
+                sendMessageToAllPlayers(bot.name + Component.translatable("player.playerclientevents.player_add").getString(), true);
+                sendMessageToAllPlayers(String.format(Component.translatable("player.playerclientevents.player_count").getString(), rtsPlayers.size()));
             }
             saveRTSPlayers();
         }
@@ -444,8 +444,8 @@ public class PlayerServerEvents {
         synchronized (rtsPlayers) {
             rtsPlayers.removeIf(rtsPlayer -> {
                 if (rtsPlayer.name.equals(playerName)) {
-                    sendMessageToAllPlayers(playerName + " has " + reason + " and is defeated!", true);
-                    sendMessageToAllPlayers("There are " + (rtsPlayers.size() - 1) + " RTS player(s) remaining");
+                    sendMessageToAllPlayers(String.format(Component.translatable("player.playerclientevents.player_failed").getString(), playerName, reason), true);
+                    sendMessageToAllPlayers(String.format(Component.translatable("player.playerclientevents.player_remaining").getString(), (rtsPlayers.size() - 1)));
 
                     PlayerClientboundPacket.defeat(playerName);
 
@@ -464,7 +464,7 @@ public class PlayerServerEvents {
             // if there is only one player left, they are automatically victorious
             if (rtsPlayers.size() == 1) {
                 for (RTSPlayer rtsPlayer : rtsPlayers) {
-                    sendMessageToAllPlayers(rtsPlayer.name + " is victorious!", true);
+                    sendMessageToAllPlayers(String.format(Component.translatable("player.playerclientevents.player_victory").getString(), rtsPlayer.name), true);
                     PlayerClientboundPacket.victory(rtsPlayer.name);
                 }
             }
@@ -493,7 +493,7 @@ public class PlayerServerEvents {
             PlayerClientboundPacket.resetRTS();
 
             if (!TutorialServerEvents.isEnabled())
-                sendMessageToAllPlayers("Match has been reset!", true);
+                sendMessageToAllPlayers(Component.translatable("player.playerclientevents.match_reset").getString(), true);
 
             ResourcesServerEvents.resourcesList.clear();
             saveRTSPlayers();
