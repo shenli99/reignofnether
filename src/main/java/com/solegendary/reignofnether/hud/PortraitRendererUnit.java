@@ -131,7 +131,7 @@ public class PortraitRendererUnit<T extends LivingEntity, M extends EntityModel<
     // Must be called from DrawScreenEvent
     public RectZone render(PoseStack poseStack, String name, int x, int y, LivingEntity entity) {
 
-        name = Component.translatable(name + ":)").getString();
+        name = Component.translatable("units." + name).getString();
 
         Relationship rs = UnitClientEvents.getPlayerToEntityRelationship(entity);
 

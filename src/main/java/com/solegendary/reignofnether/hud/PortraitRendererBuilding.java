@@ -15,6 +15,7 @@ import net.minecraft.client.gui.GuiComponent;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.block.model.ItemTransforms;
 import net.minecraft.client.renderer.texture.OverlayTexture;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
 
 // Renders a Building's portrait including an animated block, name, healthbar, list of stats and UI frames
@@ -39,6 +40,7 @@ class PortraitRendererBuilding {
         Relationship rs = BuildingClientEvents.getPlayerToBuildingRelationship(building);
 
         String name = building.name;
+        name = Component.translatable("buildings." + name).getString();
 
         if (!building.isBuilt)
             name += " (" + (int) (building.getBlocksPlacedPercent() * 100) + "%)";
