@@ -14,6 +14,7 @@ import com.solegendary.reignofnether.tutorial.TutorialClientEvents;
 import com.solegendary.reignofnether.unit.units.villagers.RavagerProd;
 import com.solegendary.reignofnether.util.Faction;
 import net.minecraft.core.BlockPos;
+import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
@@ -25,6 +26,7 @@ import net.minecraft.world.level.block.Rotation;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 
 import static com.solegendary.reignofnether.building.BuildingUtils.getAbsoluteBlockData;
@@ -102,10 +104,10 @@ public class Castle extends ProductionBuilding implements GarrisonableBuilding {
                         FormattedCharSequence.forward(Castle.buildingName, Style.EMPTY.withBold(true)),
                         ResourceCosts.getFormattedCost(cost),
                         FormattedCharSequence.forward("", Style.EMPTY),
-                        FormattedCharSequence.forward("A grand castle that can produce ravagers ", Style.EMPTY),
-                        FormattedCharSequence.forward("and garrison up to " + MAX_OCCUPANTS + " units.", Style.EMPTY),
+                        FormattedCharSequence.forward(Component.translatable("building.buildings.villagers.castle.description1").getString(), Style.EMPTY),
+                        FormattedCharSequence.forward(String.format(Component.translatable("building.buildings.villagers.castle.description2").getString(), MAX_OCCUPANTS), Style.EMPTY),
                         FormattedCharSequence.forward("", Style.EMPTY),
-                        FormattedCharSequence.forward("Requires an arcane tower and a barracks.", Style.EMPTY)
+                        FormattedCharSequence.forward(Component.translatable("building.buildings.villagers.castle.description3").getString(), Style.EMPTY)
                 ),
                 null
         );

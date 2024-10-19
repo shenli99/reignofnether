@@ -13,6 +13,7 @@ import com.solegendary.reignofnether.unit.units.villagers.PillagerProd;
 import com.solegendary.reignofnether.unit.units.villagers.VindicatorProd;
 import com.solegendary.reignofnether.util.Faction;
 import net.minecraft.core.BlockPos;
+import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.FormattedCharSequence;
@@ -76,7 +77,7 @@ public class Barracks extends ProductionBuilding {
                         FormattedCharSequence.forward(Barracks.buildingName, Style.EMPTY.withBold(true)),
                         ResourceCosts.getFormattedCost(cost),
                         FormattedCharSequence.forward("", Style.EMPTY),
-                        FormattedCharSequence.forward("A training ground for Pillagers and Vindicators", Style.EMPTY)
+                        FormattedCharSequence.forward(Component.translatable("building.buildings.villagers.barracks.description").getString(), Style.EMPTY)
                 ),
                 null
         );

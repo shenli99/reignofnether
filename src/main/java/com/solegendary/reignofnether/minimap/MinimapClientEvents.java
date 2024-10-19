@@ -29,6 +29,7 @@ import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.texture.DynamicTexture;
 import net.minecraft.core.BlockPos;
+import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.FormattedCharSequence;
@@ -139,6 +140,7 @@ public class MinimapClientEvents {
     public static Button getToggleSizeButton() {
         return new Button(
             largeMap ? "Close" : "Open large map",
+            //largeMap ? Component.translatable("reignofnether.map.close").getString() : Component.translatable("reignofnether.map.open").getString(),
             14,
             largeMap ? new ResourceLocation(ReignOfNether.MOD_ID, "textures/icons/items/barrier.png") :
                         new ResourceLocation(ReignOfNether.MOD_ID, "textures/icons/items/map.png"),
@@ -149,7 +151,7 @@ public class MinimapClientEvents {
             () -> true,
             () -> shouldToggleSize = true,
             () -> { },
-            List.of(FormattedCharSequence.forward(largeMap ? "Close" : "Open large map", Style.EMPTY))
+            List.of(FormattedCharSequence.forward(largeMap ? Component.translatable("reignofnether.map.close").getString() : Component.translatable("reignofnether.map.open").getString(), Style.EMPTY))
         );
     }
 

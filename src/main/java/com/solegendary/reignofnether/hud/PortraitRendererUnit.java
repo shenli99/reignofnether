@@ -10,14 +10,16 @@ import com.mojang.math.Quaternion;
 import com.mojang.math.Vector3f;
 import com.solegendary.reignofnether.building.GarrisonableBuilding;
 import com.solegendary.reignofnether.healthbars.HealthBarClientEvents;
+import com.solegendary.reignofnether.research.researchItems.*;
 import com.solegendary.reignofnether.resources.Resources;
 import com.solegendary.reignofnether.unit.Relationship;
 import com.solegendary.reignofnether.unit.UnitClientEvents;
 import com.solegendary.reignofnether.unit.interfaces.AttackerUnit;
 import com.solegendary.reignofnether.unit.interfaces.Unit;
 import com.solegendary.reignofnether.unit.interfaces.WorkerUnit;
-import com.solegendary.reignofnether.unit.units.monsters.CreeperUnit;
-import com.solegendary.reignofnether.unit.units.piglins.BruteUnit;
+import com.solegendary.reignofnether.unit.units.monsters.*;
+import com.solegendary.reignofnether.unit.units.piglins.*;
+import com.solegendary.reignofnether.unit.units.villagers.*;
 import com.solegendary.reignofnether.util.MyMath;
 import com.solegendary.reignofnether.util.MyRenderer;
 import net.minecraft.ReportedException;
@@ -131,7 +133,24 @@ public class PortraitRendererUnit<T extends LivingEntity, M extends EntityModel<
     // Must be called from DrawScreenEvent
     public RectZone render(PoseStack poseStack, String name, int x, int y, LivingEntity entity) {
 
-        name = Component.translatable("units." + name).getString();
+        switch(name) {
+            case CreeperProd.itemName, ResearchPortalForCivilian.itemName, ResearchPortalForMilitary.itemName,
+                 ResearchPortalForTransport.itemName, ResearchFireResistance.itemName, SkeletonProd.itemName,
+                 ZombieProd.itemName, StrayProd.itemName, HuskProd.itemName, DrownedProd.itemName,
+                 SpiderProd.itemName, PoisonSpiderProd.itemName, VillagerProd.itemName, ZombieVillagerProd.itemName,
+                 VindicatorProd.itemName, PillagerProd.itemName, IronGolemProd.itemName, WitchProd.itemName,
+                 EvokerProd.itemName, WardenProd.itemName, RavagerProd.itemName, GruntProd.itemName,
+                 BruteProd.itemName, HeadhunterProd.itemName, HoglinProd.itemName, BlazeProd.itemName,
+                 WitherSkeletonProd.itemName, GhastProd.itemName, ResearchVindicatorAxes.itemName,
+                 ResearchPillagerCrossbows.itemName, ResearchLabLightningRod.itemName,
+                 ResearchResourceCapacity.itemName, ResearchSpiderJockeys.itemName, ResearchPoisonSpiders.itemName,
+                 ResearchHusks.itemName, ResearchDrowned.itemName, ResearchLingeringPotions.itemName,
+                 ResearchStrays.itemName, ResearchEvokerVexes.itemName, ResearchSilverfish.itemName,
+                 ResearchGolemSmithing.itemName, ResearchCastleFlag.itemName, ResearchRavagerCavalry.itemName,
+                 ResearchBruteShields.itemName, ResearchHoglinCavalry.itemName, ResearchHeavyTridents.itemName,
+                 ResearchBlazeFirewall.itemName, ResearchWitherClouds.itemName, ResearchAdvancedPortals.itemName -> name = Component.translatable("units.name." + name.toLowerCase().replaceAll(" ", "_")).getString();
+        }
+        //name = Component.translatable("units.name." + name.toLowerCase()).getString();
 
         Relationship rs = UnitClientEvents.getPlayerToEntityRelationship(entity);
 

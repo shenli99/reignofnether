@@ -18,7 +18,7 @@ import net.minecraft.world.item.ItemStack;
 
 public class TopdownGuiContainer extends AbstractContainerMenu {
 
-    public static final Component TITLE = Component.literal("topdowngui_container");
+    public static final Component TITLE = Component.translatable("guiscreen.topdowngui_container");
 
     public static TopdownGuiContainer createContainerClientSide(int windowID, Inventory playerInventory, net.minecraft.network.FriendlyByteBuf extraData) {
         return new TopdownGuiContainer(windowID, playerInventory);

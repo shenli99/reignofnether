@@ -22,6 +22,7 @@ public abstract class ProductionItem {
     public int oreCost = 0;
     public int popCost = 0;
 
+
     public int ticksToProduce; // build time in ticks
     public int ticksLeft;
     public boolean canDuplicate; // is building allowed to build more than one of these? eg. tech upgrades can't be duplicated

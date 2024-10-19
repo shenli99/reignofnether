@@ -9,6 +9,7 @@ import com.solegendary.reignofnether.keybinds.Keybinding;
 import com.solegendary.reignofnether.registrars.EntityRegistrar;
 import com.solegendary.reignofnether.resources.ResourceCost;
 import com.solegendary.reignofnether.resources.ResourceCosts;
+import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
@@ -45,8 +46,8 @@ public class GruntProd extends ProductionItem {
             ResourceCosts.getFormattedCost(cost),
             ResourceCosts.getFormattedPopAndTime(cost),
             FormattedCharSequence.forward("", Style.EMPTY),
-            FormattedCharSequence.forward("A piglin worker that can construct and ", Style.EMPTY),
-            FormattedCharSequence.forward("repair buildings and gather resources.", Style.EMPTY)
+            FormattedCharSequence.forward(Component.translatable("unit.piglins.gruntprod.description1").getString(), Style.EMPTY),
+            FormattedCharSequence.forward(Component.translatable("unit.piglins.gruntprod.description2").getString(), Style.EMPTY)
         ));
 
         return new Button(

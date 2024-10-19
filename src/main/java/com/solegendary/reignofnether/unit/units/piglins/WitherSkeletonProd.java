@@ -11,8 +11,10 @@ import com.solegendary.reignofnether.keybinds.Keybinding;
 import com.solegendary.reignofnether.registrars.EntityRegistrar;
 import com.solegendary.reignofnether.resources.ResourceCost;
 import com.solegendary.reignofnether.resources.ResourceCosts;
+import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.level.ColumnPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.FormattedCharSequence;
 import net.minecraft.world.level.Level;
@@ -47,11 +49,11 @@ public class WitherSkeletonProd extends ProductionItem {
                 ResourceCosts.getFormattedCost(cost),
                 ResourceCosts.getFormattedPopAndTime(cost),
                 FormattedCharSequence.forward("", Style.EMPTY),
-                FormattedCharSequence.forward("A charcoal black skeleton that afflicts", Style.EMPTY),
-                FormattedCharSequence.forward("wither on enemies and deals bonus damage", Style.EMPTY),
-                FormattedCharSequence.forward("(up to double) to enemies near death.", Style.EMPTY),
+                FormattedCharSequence.forward(Component.translatable("unit.piglins.wither_skeletonprod.decription1").getString(), Style.EMPTY),
+                FormattedCharSequence.forward(Component.translatable("unit.piglins.wither_skeletonprod.decription2").getString(), Style.EMPTY),
+                FormattedCharSequence.forward(Component.translatable("unit.piglins.wither_skeletonprod.decription3").getString(), Style.EMPTY),
                 FormattedCharSequence.forward("", Style.EMPTY),
-                FormattedCharSequence.forward("Requires a Wither Shrine.", Style.EMPTY)
+                FormattedCharSequence.forward(Component.translatable("unit.piglins.wither_skeletonprod.decription4").getString(), Style.EMPTY)
         ));
 
         return new Button(

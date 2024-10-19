@@ -1,6 +1,56 @@
 {
     "hud.portraitrendereruint.captain": " 首领",
 
+    "reignofnether.map.close": "关闭",
+    "reignofnether.map.open": "打开地图",
+
+    "buildings.name.arcane_tower": "奥术塔",
+    "building.buildings.villagers.arcane_tower.description1": "一个魔法塔，女巫和唤魔者的家园。",
+    "building.buildings.villagers.arcane_tower.description2": "需要兵营。",
+
+    "buildings.name.barracks": "兵营",
+    "building.buildings.villagers.barracks.description": "掠夺者和卫道士的训练场。",
+
+    "buildings.name.blacksmith": "铁匠铺",
+    "building.buildings.villagers.blacksmith.description1": "一个打造军事升级和铁傀儡的锻造坊。",
+    "building.buildings.villagers.blacksmith.description2": "需要兵营。",
+
+    "buildings.name.castle": "城堡",
+    "building.buildings.villagers.castle.description1": "一个宏伟的城堡，能够生产劫掠兽",
+    "building.buildings.villagers.castle.description2": "并可驻扎最多 %d 个单位。",
+    "building.buildings.villagers.castle.description3": "需要奥术塔和兵营。",
+
+    "buildings.name.iron_golem": "铁傀儡",
+    "building.buildings.villagers.iron_golem.description1": "可以在野外建造的铁傀儡。",
+    "building.buildings.villagers.iron_golem.description2": "需要在铁匠铺进行研究。",
+
+    "units.name.villager": "村民",
+    "units.name.evoker": "唤魔者",
+    "uints.name.iron_golem": "铁傀儡",
+    "units.name.pillager": "掠夺者",
+    "units.name.ravager": "劫掠兽",
+    "units.name.vindicator": "卫道士",
+    "units.name.witch": "女巫",
+
+    "units.name.creeper": "苦力怕",
+    "units.name.drowned": "溺尸",
+    "units.name.husk": "尸壳",
+    "units.name.cave_spider": "洞穴蜘蛛",
+    "units.name.skeleton": "骷髅",
+    "units.name.spider": "蜘蛛",
+    "units.name.stray": "流浪者",
+    "units.name.warden": "监守者",
+    "units.name.zombie": "僵尸",
+    "units.name.zombie_villager": "僵尸村民",
+
+    "units.name.blaze": "烈焰人",
+    "units.name.brute": "猪灵蛮兵",
+    "units.name.ghast": "恶魂",
+    "units.name.grunt": "暴徒",
+    "units.name.headhunter": "猎头者",
+    "units.name.hoglin": "疣猪兽",
+    "units.name.wither_skeleton": "凋灵骷髅",
+
     "hud.hudclientevents.food": "食物",
     "hud.hudclientevents.wood": "木材",
     "hud.hudclientevents.ore": "矿物",
@@ -50,7 +100,7 @@
     "unit.monsters.wardenprod.description": "一个强大但失明的怪物，能够发射音波攻击。",
     "unit.monsters.zombieprod.description1": "一个具有基础近战攻击的亡灵怪物。",
     "unit.monsters.zombieprod.description2": "僵尸会在阳光下燃烧。",
-    "unit.monsters.zombievillagerprod.description1": "一个亡灵工人，能够建造和",
+    "unit.monsters.zombievillagerprod.description1": "一个僵尸村民，能够建造和",
     "unit.monsters.zombievillagerprod.description2": "修理建筑物并收集资源。",
     "unit.monsters.zombievillagerprod.description3": "僵尸村民不会在阳光下燃烧。",
 
@@ -97,7 +147,7 @@
     "item.reignofnether.ghast_unit_spawn_egg": "生成恶魂",
     "item.reignofnether.zombie_piglin_unit_spawn_egg": "生成僵尸猪灵",
     "item.reignofnether.zoglin_unit_spawn_egg": "生成僵尸疣猪兽",
-    
+
     "sounds.reignofnether.under_attack": "受到攻击！",
     "sounds.reignofnether.victory": "胜利！",
     "sounds.reignofnether.defeat": "失败",

@@ -40,7 +40,7 @@ class PortraitRendererBuilding {
         Relationship rs = BuildingClientEvents.getPlayerToBuildingRelationship(building);
 
         String name = building.name;
-        name = Component.translatable("buildings." + name).getString();
+        name = Component.translatable("buildings.name." + name.toLowerCase().replaceAll(" ", "_")).getString();
 
         if (!building.isBuilt)
             name += " (" + (int) (building.getBlocksPlacedPercent() * 100) + "%)";

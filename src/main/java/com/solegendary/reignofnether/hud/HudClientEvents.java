@@ -453,6 +453,7 @@ public class HudClientEvents {
                     buttonImagePath = "textures/mobheads/" + unitName + ".png";
 
                 Button button = new Button(
+                        //Component.translatable("unit.name." + unitName).getString(),
                         unitName,
                         iconSize,
                         new ResourceLocation(ReignOfNether.MOD_ID, buttonImagePath),
